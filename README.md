@@ -1,6 +1,6 @@
 # 🚗 NextGen Valet Parking Management System
 
-A comprehensive, full-stack **Valet Parking Management System** designed for hotels, malls, restaurants, and parking garages. Built with modern technologies to streamline car check-in/check-out operations with QR code integration.
+A comprehensive full-stack **Valet Parking Management System** with QR code ticketing, real-time updates, and multi-branch support. Perfect for hotels, restaurants, malls, and parking garages.
 
 ## 🌐 Live Demo
 
@@ -10,78 +10,70 @@ A comprehensive, full-stack **Valet Parking Management System** designed for hot
 
 ## 📸 Screenshots
 
-### Landing Page
-![Landing Page](photos/Screenshot%202025-12-21%20190048.png)
+### 🔐 Login Page
+![Login](photos/login.png)
 
-### Login Page
-![Login](photos/Screenshot%202025-12-21%20190215.png)
+### 🔐 Admin Login
+![Admin Login](photos/admin-login.png)
 
-### Car Registration (Check-in)
-![Register Car](photos/Screenshot%202025-12-21%20190233.png)
+### 🏠 Home Dashboard
+![Home](photos/home.png)
 
-### QR Code Generation
-![QR Code](photos/Screenshot%202025-12-21%20190307.png)
+### 👷 Worker Dashboard - Active Visits & Pickup Requests
+![Worker Dashboard](photos/worker-dashboard.png)
 
-### Worker Dashboard
-![Worker Dashboard](photos/Screenshot%202025-12-26%20210257.png)
+### 📊 Admin Dashboard - Statistics & Analytics
+![Admin Dashboard](photos/admin-dashboard%20(2).png)
 
-### Active Visits Management
-![Active Visits](photos/Screenshot%202025-12-26%20210419.png)
+### 📷 QR Code Scanner - Check-in/Check-out
+![QR Scanner](photos/qr-code-scanner.png)
 
-### Admin Dashboard
-![Admin Dashboard](photos/Screenshot%202025-12-26%20210443.png)
+### 🎫 QR Code Ticket Example
+![QR Code](photos/qr-code-example.png)
 
-### Visit History
-![Visit History](photos/Screenshot%202025-12-26%20210458.png)
+### ⚙️ System Configuration - Branches, Workers & Fees
+![System Config](photos/system-config.png)
 
-### QR Scanner
-![Scanner](photos/Screenshot%202025-12-26%20210510.png)
+### 📋 Activity Log
+![Log](photos/log.png)
 
-### Pickup Request
-![Pickup Request](photos/Screenshot%202025-12-26%20210526.png)
-
-### Settings Panel
-![Settings](photos/Screenshot%202025-12-26%20210555.png)
-
-### Mobile Responsive
-![Mobile View](photos/Screenshot%202025-12-26%20210715.png)
-
-### Analytics
-![Analytics](photos/Screenshot%202025-12-26%20210816.png)
+### 📊 Reports & Analytics
+![Reports](photos/Screenshot%202025-12-26%20210816.png)
 
 ---
 
 ## ✨ Key Features
 
-### 🎫 QR Code Ticket System
-- Generate unique QR codes for each parked vehicle
-- Customers can scan QR to request car pickup
-- Real-time ticket tracking
+### 🎫 Smart QR Ticketing System
+- Auto-generate unique QR codes for each vehicle
+- Print-ready tickets with parking info
+- Customers scan QR to request car retrieval
+- Real-time ticket status tracking
 
 ### 👥 Multi-Role Access Control
-- **Admin**: Full system control, analytics, and settings management
-- **Worker**: Car check-in/check-out, handle pickup requests
-- **Customer**: Request car pickup via QR scan
+| Role | Capabilities |
+|------|--------------|
+| **Admin** | Full system control, analytics, manage branches & workers, settings |
+| **Worker** | Check-in/out vehicles, handle pickup requests, view active visits |
+| **Customer** | Request car pickup by scanning QR code |
 
-### 🏢 Multi-Branch Support
-- Manage multiple parking locations from one dashboard
-- Branch-specific settings and workers
-- Separate analytics per branch
+### 🏢 Multi-Branch Management
+- Create and manage multiple parking locations
+- Assign workers to specific branches
+- Per-branch settings (capacity, fees)
+- Branch-specific analytics
 
-### 📊 Dashboard & Analytics
-- Real-time active visits monitoring
+### 📊 Real-Time Dashboard & Analytics
+- Live active visits monitoring
+- Pickup request notifications (Socket.IO)
+- Revenue tracking per period (24h, 7d, 30d, 1y)
 - Visit history with search & filter
-- Export reports to Excel (XLSX)
-- Track pickup request times
+- Export to Excel (XLSX)
 
-### ⚡ Real-Time Updates
-- Socket.IO integration for live updates
-- Instant pickup request notifications
-- Real-time dashboard refresh
-
-### 🌐 Bilingual Support
-- Arabic & English interface
-- RTL layout support
+### 🌐 Bilingual (Arabic & English)
+- Full RTL support for Arabic
+- Language toggle in header
+- All text fully translated
 
 ---
 
@@ -90,87 +82,89 @@ A comprehensive, full-stack **Valet Parking Management System** designed for hot
 ### Backend
 | Technology | Purpose |
 |------------|---------|
-| Node.js | Runtime Environment |
-| Express.js | Web Framework |
-| MongoDB | Database |
-| Mongoose | ODM |
-| JWT | Authentication |
-| Socket.IO | Real-time Communication |
-| QRCode | QR Generation |
-| XLSX | Excel Export |
+| **Node.js** | Runtime |
+| **Express.js** | REST API |
+| **MongoDB** | Database |
+| **Mongoose** | ODM |
+| **JWT** | Authentication |
+| **Socket.IO** | Real-time updates |
+| **QRCode** | QR generation |
+| **XLSX** | Excel export |
+| **bcryptjs** | Password hashing |
 
 ### Frontend
 | Technology | Purpose |
 |------------|---------|
-| React 18 | UI Library |
-| TypeScript | Type Safety |
-| Vite | Build Tool |
-| TailwindCSS | Styling |
-| Shadcn/UI | UI Components |
-| React Query | Data Fetching |
-| Framer Motion | Animations |
-| html5-qrcode | QR Scanning |
+| **React 18** | UI Framework |
+| **TypeScript** | Type Safety |
+| **Vite** | Build Tool |
+| **TailwindCSS** | Styling |
+| **Shadcn/UI** | UI Components |
+| **React Query** | Data Fetching & Caching |
+| **Framer Motion** | Animations |
+| **html5-qrcode** | QR Camera Scanner |
+| **Wouter** | Routing |
+| **Zod** | Validation |
 
 ---
 
-## 📱 Pages & Features
+## 📱 Application Pages
 
-| Page | Description |
-|------|-------------|
-| 🏠 Landing | Welcome page with role selection |
-| 🔐 Login | Secure JWT authentication |
-| 🚗 Register Car | Check-in vehicles with QR generation |
-| 📷 Scanner | Scan QR to view car details |
-| 📋 Visits | View all active & historical visits |
-| 👷 Worker Dashboard | Manage parking operations |
-| 📊 Admin Dashboard | Full analytics & management |
-| ⚙️ Admin Settings | Configure system settings |
-| 📲 Request Pickup | Customer pickup request page |
+| Page | Route | Description |
+|------|-------|-------------|
+| Landing | `/` | Hero section with features |
+| Login | `/login` | JWT authentication |
+| Home | `/home` | Role-based dashboard |
+| Register Car | `/register` | Check-in vehicle + QR |
+| Scanner | `/scan` | QR/Manual check-in/out |
+| Visits | `/visits` | Visit history + export |
+| Worker Dashboard | `/worker` | Active visits & requests |
+| Admin Dashboard | `/admin` | Full analytics |
+| Admin Settings | `/admin/settings` | Branches, workers, fees |
+| Pickup Request | `/request/:qr` | Customer pickup page |
 
 ---
 
-## 🚀 Deployment
+## 🚀 Deployment Ready
 
-Ready for deployment on:
-- ✅ Vercel
-- ✅ Cloudflare Pages
-- ✅ Azure / IIS
-- ✅ Any Node.js hosting
+- ✅ **Vercel** - `vercel.json` included
+- ✅ **Cloudflare Pages** - `_redirects` configured
+- ✅ **Azure / IIS** - `web.config` ready
+- ✅ **Google App Engine** - `app.yaml` included
 
 ---
 
 ## 📦 What's Included
 
-- ✅ Complete source code (Frontend + Backend)
-- ✅ MongoDB database models & schemas
-- ✅ RESTful API with full documentation
-- ✅ Seed data script for quick setup
-- ✅ Deployment configurations (Vercel, Azure, IIS)
-- ✅ Real-time Socket.IO integration
+| Item | Description |
+|------|-------------|
+| ✅ Full Source Code | Frontend (React/TS) + Backend (Node.js) |
+| ✅ Database Models | MongoDB schemas with Mongoose |
+| ✅ Authentication | JWT with bcrypt password hashing |
+| ✅ Real-time Updates | Socket.IO integration |
+| ✅ Seed Script | Quick database setup |
+| ✅ Deployment Configs | Vercel, Azure, Cloudflare |
+| ✅ Responsive Design | Mobile-first approach |
+| ✅ Bilingual | Arabic & English support |
 
 ---
 
 ## 💰 Price: $30
 
-> ⚠️ **Note**: This is a commercial project. Source code is provided after purchase.
-
----
-
-## 📞 Contact
-
-For purchase or inquiries, contact me.
+> ⚠️ **Note**: Source code is delivered after purchase. Demo available for testing.
 
 ---
 
 ## 🏷️ Tags
 
-`valet-parking` `parking-management` `qr-code` `mern-stack` `react` `nodejs` `mongodb` `typescript` `tailwindcss` `real-time` `socket-io` `admin-dashboard` `multi-branch` `arabic-support` `hotel-management` `full-stack`
+`valet-parking` `parking-management` `qr-code` `mern-stack` `react` `nodejs` `mongodb` `typescript` `tailwindcss` `real-time` `socket-io` `admin-dashboard` `multi-branch` `arabic-english` `bilingual` `hotel-management` `full-stack` `shadcn-ui`
 
 ---
 
-**Perfect for:**
+**Perfect For:**
 - 🏨 Hotels & Resorts
-- 🛒 Shopping Malls
+- 🛒 Shopping Malls  
 - 🍽️ Restaurants & Clubs
 - 🅿️ Parking Garages
 - 🎉 Event Venues
+- 🏥 Hospitals
